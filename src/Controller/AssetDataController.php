@@ -8,19 +8,28 @@ use App\Repository\AssetRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Contracts\Cache\CacheInterface;
+use Symfony\Contracts\Cache\ItemInterface;
 
 class AssetDataController extends AbstractController
 {
     /**
      * @Route("/assets", name="assets")
      * @param AssetRepository $assetRepository
+     * @param CacheInterface $cache
      * @return JsonResponse
+     * @throws \Psr\Cache\InvalidArgumentException
      */
-    public function all(AssetRepository $assetRepository)
+    public function all(AssetRepository $assetRepository, CacheInterface $cache)
     {
-        $players = $assetRepository->findBy([
-            'active' => true,
-        ]);
+        $players = $cache->get('all_assets', function (ItemInterface $item) use ($assetRepository) {
+            $item->expiresAfter(3600);
+            $players = $assetRepository->findBy([
+                'active' => true,
+            ]);
+
+            return $players;
+        });
 
         return $this->json([
             'status' => 'success',
