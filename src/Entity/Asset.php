@@ -63,7 +63,7 @@ class Asset
 
     /**
      * @var Collection|AssetValue[]
-     * @ORM\OneToMany(targetEntity="AssetValue", mappedBy="asset")
+     * @ORM\OneToMany(targetEntity="AssetValue", mappedBy="asset", fetch="LAZY")
      */
     private $values;
 
