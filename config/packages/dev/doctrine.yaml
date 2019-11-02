@@ -1,0 +1,4 @@
+doctrine:
+    dbal:
+        # configure these for your database server
+        driver: 'pdo_sqlite'

@@ -1,0 +1,49 @@
+firstName
+lastName
+name
+age
+
+salaryAverage - salary_avg  decimal 2 places
+freeAgencyYear = fa_year int
+
+dynoSD Standard deviation of dynoECR decimal 2 place
+dynpECR Expert Consensus Rank, Dynasty Positional decimal 2 place
+dynpSD Standard deviation of dynpECR  decimal 2 place
+rdpECR Expert Consensus Rank, Redraft Positional (Draft)  decimal 2 place
+rdpSD Standard deviation of rdpECR  decimal 2 place
+
+draft_year
+draft_round
+draft_pick inside round (1 to 32)
+college
+draft_rookieadp Mizelle/DLF ADP rookie ADP int
+draft_2QBrookieADP 2QBs.com rookie ADP int
+height in inches from MFL int
+weight in pound from MFL int
+armLength inches from relativeathleticscores.com decimal 3 places
+handsize decimal 3 places
+forty decimal 2 places
+twenty-split decimal 2 places
+ten-split decimal 2 places
+bench reps int SWITCH TO INT!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+vertical inches decimal 2 place
+broad broad jump decimal 2 place
+shuttle decimal 2 places
+cone 3-cone decimal 2 places
+RAS RelativeAthleticScore (1-10 athletic ranking based on all players in history) decimal 2 places
+all above RAS, "NA" = null please
+empty strings = null in all cases
+
+3rd party IDs:
+PFR
+MFL
+Sleeper
+Fantasy Data
+Rotowire
+Sportradar
+Rotoworld
+Yahoo
+ESPN
+Stats
+
+TODO: add all the playing stats
