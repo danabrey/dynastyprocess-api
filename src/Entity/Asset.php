@@ -19,7 +19,7 @@ use Gedmo\Timestampable\Traits\TimestampableEntity;
  *     "round_pick" = "RoundPick"
  * })
  */
-class Asset implements \JsonSerializable
+class Asset
 {
 
     use TimestampableEntity;
@@ -165,15 +165,6 @@ class Asset implements \JsonSerializable
             $this instanceof Player ? $this->getPosition() : '',
             $this instanceof Player ? $this->getTeam() : ''
         ));
-    }
-
-
-    public function jsonSerialize()
-    {
-        return [
-            'id' => $this->id,
-            'name' => $this->getNameForSelect(),
-        ];
     }
 
 

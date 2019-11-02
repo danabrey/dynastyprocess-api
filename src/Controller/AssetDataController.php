@@ -12,7 +12,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class AssetDataController extends AbstractController
 {
     /**
-     * @Route("/players-list", name="players_list")
+     * @Route("/assets", name="assets")
      * @param AssetRepository $assetRepository
      * @return JsonResponse
      */
@@ -20,8 +20,6 @@ class AssetDataController extends AbstractController
     {
         $players = $assetRepository->findBy([
             'active' => true,
-        ], [
-            'valueQB1' => 'DESC'
         ]);
 
         return $this->json([
