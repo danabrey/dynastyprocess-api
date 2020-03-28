@@ -50,6 +50,10 @@ class StoreValuesCommand extends Command
             'active' => true,
         ]);
         foreach($assets as $asset) {
+            if ($asset->getValueQB1() === null || $asset->getValueQB2() === null) {
+                continue;
+            }
+
             $this->assetValueRepository->newFromAsset($asset);
         }
         $this->entityManager->flush();

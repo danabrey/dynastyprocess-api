@@ -194,8 +194,6 @@ class DynastyProcessDataImporter
                 continue;
             }
 
-            var_dump($row);
-
             $asset->setValueQB1($row['1QBValue'] !== '' ? $row['1QBValue'] : 0);
             $asset->setValueQB2($row['2QB Value'] !== '' ? $row['2QB Value'] : 0);
             $asset->setEcrQB1($row['dynoECR'] !== '' ? $row['dynoECR'] : 0);
